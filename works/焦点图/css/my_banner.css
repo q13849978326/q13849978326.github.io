@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*¶àÍ¼¶¯Ì¬js½¹µãÍ¼*/
+	.works_page .sub_banner{height: 400px; width: 100%; overflow: hidden; border-bottom: 1px solid grey;}
+		/*ÒÔÏÂÎª·â×°*/
+	.sub_banner .piclist{width: 100%;height: 100%;position: relative; }
+					/*Í¼Æ¬Ð§¹û*/
+	.sub_banner .piclist img{ width: 60%;height: 80%;position: absolute;visibility: hidden;left: 20%; display:inline-block;top:10%; }
+	.sub_banner .piclist .img_prev{ height: 60%;position: absolute;visibility: visible;left:0%; top:20%;}
+	.sub_banner .piclist .img_next{ height: 60%;position: absolute;visibility: visible;left: 40%;top:20%;}
+	.sub_banner .piclist .img_act{animation: pic_move 1s linear 0s ;visibility:visible;z-index: 1;}
+					/*½¹µãÍ¼×óÓÒ°´Å¥*/
+	.sub_banner .ban_next,.ban_prev{width: 40px;height: 40px;position: absolute;top: 40%;z-index: 2;background: rgba(0,0,0,0.3);cursor: pointer;display: none;line-height: 40px;font-size: 28px;text-align: center;color: #C1C1C1;font-weight: normal;}
+	.sub_banner .ban_next{right: 3%;}
+	.sub_banner .ban_prev{left: 3%;}
+	.sub_banner .piclist:hover .ban_next ,.piclist:hover .ban_prev{display: block;}
+	.sub_banner .piclist .ban_next:hover ,.piclist .ban_prev:hover{background: rgba(0,0,0,0.7);}
+				 	/*ÏÂÃæµÄ°´Å¥*/
+	.sub_banner .ban_button{width: 100%;height: 20px;line-height: 20px;position: absolute;bottom: 0px; z-index: 2;text-align: center;}
+	.sub_banner .ban_button span{width: 10px;height: 10px;border: 1px solid #FFFFFF;border-radius: 50%;margin: 0 10px;display: inline-block;background-color: rgba(0,0,0,0.4);cursor: pointer;}
+	.sub_banner .ban_button .span_act{background-color: #FE7202;}
+/*¶àÍ¼¶¯Ì¬js½¹µãÍ¼*/
+
+
+
+
+
+

@@ -1,0 +1,110 @@
+	@charset "utf-8";
+/* CSS Document */
+/*初始化*/
+/* 
+body,a,p,h1,h2,h3,h4,h5,h6,ul,li,dl,dd,input{ margin:0; padding:0;}
+a{ text-decoration:none; }
+ul{ list-style-type:none;}
+body{font-family:  Arial,Verdana ,"Microsoft YaHei","SimSun",sans-serif;}
+img,input,button,textarea{ border:none;}img针对ie6以下
+通用
+.inner{ width:1210px ; margin:0 auto;}
+.fl,.left{float: left;}
+.fr,.right{float: right;}
+.clear{clear: both;height: 0px;} 
+*/
+
+/*product_details*/
+.addproduct{background-color: #f2f2f2;}
+
+.product_details_tier{height: 45px;line-height: 45px;}
+.product_details_tier a{padding: 0 8px 0 12px;color: #606060;font-size: 12px;height: 45px;}
+.product_details_tier dt{float: left; }
+.product_details_tier dt a{ font-size: 18px;}
+.product_details_tier dd{float: left;height: 45px;}
+.product_details_tier dd a{background: url(../images/product_details_tier_03.jpg) no-repeat left center;}
+
+.addproduct_wrap{border-bottom: 1px solid #f1f1f1;background-color: #fff; padding-top: 12px;}
+.addproduct_wrap:after{content: "";height: 0;visibility: hidden;clear: both;display: block;}
+
+.addproduct_pic{float: left; width: 350px;padding: 0 15px;}
+.addproduct_pic .bigPic{height: 369px;position: relative;}
+.addproduct_pic img{width: 100%;height: 100%;}
+/*放大镜*/
+.addproduct_pic .bigPic img{ }
+.addproduct_pic .bigPic span {width:200px; height:200px; background:red; position:absolute;left:0px; top:0px; filter:alpha(opacity:40); opacity:0.4;display:none;}
+.addproduct_pic .magnify_big {width:400px; height:400px;overflow:hidden; position:absolute; top:0px; left:356px; display:none;border: 1px solid black;z-index: 2;}
+.addproduct_pic .magnify_big .bigImg {position:absolute;}
+
+.addproduct_pic .picList{height: 72px;line-height: 72px;position: relative;}
+.addproduct_pic .picList .picList_btn_left{position: absolute;width:13px;height: 24px;  left: 0px; top:24px;background:url(../images/picList_btn_le.jpg); }
+.addproduct_pic .picList .picList_btn_right{position: absolute; width:13px;height: 24px;  right: 0px; top:24px;background:url(../images/picList_btn_r.jpg)}
+.addproduct_pic .picList ul{text-align: center;}
+.addproduct_pic .picList li{display: inline-block; width: 50px;height: 50px;margin: 0 2px; border: 2px solid transparent;text-align: center;vertical-align: middle;}
+.addproduct_pic .picList .ac{ border: 2px solid #a95150;}
+.addproduct_pic .picList img{width:50px;}
+
+.addproduct_pic .botbar{height: 48px;line-height: 48px;font-size: 12px;}
+.addproduct_pic .botbar .serial{float: left;padding-left: 34px;}
+.addproduct_pic .botbar .share{float: right;width: 160px;}
+.addproduct_pic .botbar .share a{color: #606060;}
+.addproduct_pic .botbar .share i{padding:0 5px 0 10px;}
+.addproduct_pic .botbar .share .share_i{display: inline-block;width: 14px;height: 14px;background:url(../images/botbar_share_i_10.jpg) no-repeat 5px 3px; }
+.addproduct_pic .botbar .share .attention_i{display: inline-block;width: 16px;height: 16px;background:url(../images/botbar_share_i_12.jpg) no-repeat 10px 3px; }
+
+/*中间*/
+.addproduct_sel{float: left;width: 590px;height: 477px;}
+.addproduct_sel{font-size: 12px;}
+.addproduct_sel h3{line-height: 28px;padding: 0 20px 0 8px;font-size: 16px;}
+.addproduct_sel p{line-height: 22px;color: #d04f54;}
+
+.addproduct_sel dl{margin-top: 10px;line-height: 25px;}
+.addproduct_sel dl:after{content: "";height: 0;visibility: hidden;clear: both;display: block; }
+.addproduct_sel dt{float: left; padding-left: 12px;width: 60px;}
+.addproduct_sel dd{float: left;width:500px; }
+
+.addproduct_sel .price{line-height: 50px;background-color: #f7f7f7;position: relative;margin-bottom: 8px;}
+.addproduct_sel .price .evaluate{position: absolute;right: 0px;top: 10px; padding: 0 10px;border-left: 1px solid #CCC;height:30px;line-height: 18px;text-align: center;}
+.addproduct_sel .price i{font-size: 16px;color: #d0382d;font-weight: bold;}
+
+.addproduct_sel .evaluate span{font-size: 16px;color: #b6f4ff;display: block;}
+.addproduct_sel .location{padding-top: 15px;}
+.addproduct_sel .location .address{display: inline-block;}
+.addproduct_sel .location select{line-height: 23px;height: 23px;width: 132px; border: 1px solid #ccc; }
+.addproduct_sel .location i{font-weight: bold;}
+
+.addproduct_sel .serves{border-bottom: 1px dotted #ccc;padding-bottom: 10px;}
+
+.addproduct_sel .size{margin:17px 0 30px 0;}
+.addproduct_sel .size dd{padding-right: 50px;width: 450px;}
+.addproduct_sel .size li{padding:0 5px;float: left;border: 1px solid #ccc;margin: 0 8px 4px 0;cursor: pointer;position: relative;}
+.addproduct_sel .size .size_ac{background: url(../images/size_before_bg_03.jpg) no-repeat  right bottom;}
+.addproduct_sel .size .size_ac:after{content: "";position: absolute;width: 100%;height: 100%;top: -2px;left: -2px; border: 2px solid #a75353;}
+
+.addproduct_sel .shopping_cart{}
+.addproduct_sel .num_wrap{display: inline-block;padding-left: 0px; margin-left: 10px;border: 1px solid #ccc;width: 49px;height: 34px;text-align: center;}
+.addproduct_sel .num_wrap input{float: left; width: 33px;height: 34px;line-height: 34px;border-right: 1px solid #ccc; text-align: center; }
+.addproduct_sel .add_btn{float: left; width: 15px;height: 17px;border-bottom:1px solid #ccc; padding: 0px;cursor: pointer;}
+.addproduct_sel .sub_btn{float: left;width: 15px;height: 17px;padding: 0px;cursor: pointer;}
+.addproduct_sel .num_submit{width: 136px;height: 36px;margin-left: 10px; padding: 0; background-color: #e4453f;line-height: 36px;font-size: 18px;color: #fff;text-align: center;vertical-align:top;cursor: pointer;}
+.addproduct_sel .reminder{padding-top: 15px;}
+
+/*右边*/
+.addproduct_sidebar{float: left;width: 240px;height: 477px;}
+
+/*recommend*/
+.recommend{margin-top: 10px;border: 1px solid #ccc;border-top: none;}
+.recommend ul{border-top: 2px solid #aaa;border-bottom: 1px solid #ccc;height: 29px;}
+
+.recommend li{height: 29px;line-height: 29px;float: left;padding:0 12px;font-size: 14px;background-color: #f7f7f7;font-weight: bold;position: relative;border-right: 1px solid #ccc;cursor: pointer;}
+.recommend .ac{height: 36px;line-height: 36px; position: relative;margin-top:-8px;left: -1px; border-top: 2px solid #a75353;border-left: 1px solid #ccc; border-right: 1px solid #ccc; }
+
+.recommend .tab_box{height: 235px;}
+.recommend .tab_box1{height: 235px;display: none;}
+
+
+
+
+
+
+

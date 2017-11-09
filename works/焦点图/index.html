@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+<link rel="stylesheet" type="text/css" href="css/my_banner.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script type="text/javascript" src='js/my_banner.js'></script>
+
+</head>
+	
+<body>
+<div class="header">
+	<div class="inner">
+		<div class="logo"><img src="img/logo.png"></div>
+		<ul>
+			<li><a class="active" href="#">Home</a></li>
+			<li><a href="#">ABOUT</a></li>
+			<li><a href="#iWorks">featured Works</a></li>
+			<li><a href="#iSkills">Skills</a></li>
+			<li><a href="#iContact">Contact</a></li>
+			<li><a href="#">More</a></li>
+		</ul>
+	</div>
+</div>
+<!-- 优秀作品展示 -->
+<div class="works" id="iWorks">
+	<div class="inner">
+		<div class="page_title">
+			<h2>多图动态焦点图<span></span></h2>
+			<p>使用：1.复制HML结构和css、js文档。2.更改图片链接，增减图片</p>
+			<p>优点：1.自动增加焦点按钮。2.自动为图片设置和添加属性。3.点击当前图片时不会调用事件，减小运行压力。4.只需更换图片列表，其他自动更新，操作简单。</p>
+			<p>缺点：1.需要优化类名的添加和删除，目前img和焦点按钮只能存在一个类名。</p>
+		</div>
+		<div class="works_page">
+			<!-- 焦点图HTML结构 -->
+			<div class="sub_banner" >
+				<div class="piclist" id="piclist_move">
+					<!-- 图片列表 -->
+					<img class="img1  " src="img/banner1.jpg" alt="img1" >
+					<img class="img2 " src="img/banner2.jpg" alt="img2">
+					<img class="img3 " src="img/banner3.jpg" alt="img3">
+					<img class="img4 " src="img/banner4.jpg" alt="img4">
+					<img class="img5" src="img/banner5.jpg" alt="img5">
+					<img class="img6  " src="img/banner6.jpg" alt="img6">
+					<!-- 前后按钮 -->
+					<div class="ban_next" id="ban_next_move"> > </div>
+					<div class="ban_prev" id="ban_prev_move"> < </div>
+					<!-- 点按钮 -->
+					<div class="ban_button" id="ban_button_list">
+					</div>
+				</div>
+			</div>
+			<!-- 焦点图HTML结构结束 -->
+		</div>
+
+
+
+	</div>
+</div>
+<!-- 技能介绍 -->
+<!-- 联系我 -->
+
+
+<div class="footer" id="iFooter">
+	<ul class="icon">
+		<li class="icon1"></li>
+		<li class="icon3"></li>
+		<li class="icon4"></li>
+		<li class="icon5"></li>
+		<li class="icon6"></li>
+	</ul>
+</div>
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+	@charset "utf-8";
+/* CSS Document */
+/*初始化*/
+body,a,p,h1,h2,h3,h4,h5,h6,ul,li,dl,dd,input{ margin:0; padding:0;}
+i{font-style: normal;}
+a{ text-decoration:none; }
+ul{ list-style-type:none;}
+body{font-family:  Arial,Verdana ,"Microsoft YaHei","SimSun",sans-serif;font-size: 12px;}
+img,input,button,textarea{ border:none;}/*img针对ie6以下*/
+/*通用*/
+.inner{ width:1210px ; margin:0 auto;}
+.fl,.left{float: left;}
+.fr,.right{float: right;}
+.clear{clear: both;height: 0px;}
+/*toper*/
+.toper{height: 30px;background-color: #f1f1f1;line-height: 30px;}
+.toper .location{font-size:12px;}
+.toper ul{float: right;font-size:12px;}
+.toper ul li:first-child a{padding-left: 0;color: #c81623;}
+.toper li{float: left;}
+
+.toper li:hover a{color: #c81623;}
+.toper li a{line-height: 30px;height: 30px;color: #666666;font-size:12px;padding: 0 10px 0 ;}
+.toper li .top_phone{background:url(../images/);} 
+.toper i{display: inline-block; width: 10px;height: 5px;font-style: normal;margin: 0 0 0 10px;position: relative; overflow: hidden;}
+.toper i s{position: absolute;top: -7px;font-size:20px;line-height:15px;font-family:"consolas"; text-decoration:none;}
+.toper li span{ font-size: 10px;color:#dddddd; }
+
+header
+.header{height: 144px;border-bottom: 2px solid #b11911;}
+.header_top{padding-top: 22px;height: 78px;}
+.header_top .logo{width: 270px;height: 67px;}
+.sec_wrap{padding-top: 3px;padding-left: 92px;}
+.sec_wrap .sec{}
+.sec_wrap .input{height: 32px;line-height:32px;width: 446px;padding: 0 4px;border:2px solid #b61d1d;}
+.sec_wrap .sub{width: 80px;height: 36px;line-height: 36px;color: white;cursor: pointer;font-size: 16px;background-color:#b61d1d; font-family: "Micorosoft YaHei";}
+.sec_wrap ul{height: 28px;}
+.sec_wrap li{float: left;line-height: 28px;height: 28px;padding-right:11px;}
+.sec_wrap li a{font-size: 12px;color: #666666;}
+.sec_wrap li a:hover{color: #c81623;}
+.shopchat {position: relative;margin-left: 65px;}
+.shopchat a{display: block; margin-top: 3px; width: 139px;height: 34px;line-height: 34px;background: #f9f9f9;font-size: 12px;color: #666666;border: 1px solid #dfdfdf;}
+.shopchat span{display: inline-block; margin:10px 9px 0 19px;width: 17px;height: 13px;background: url(../images/jd2015img.png) no-repeat 0 -59px; }
+.shopchat i{display: inline-block; margin-left: 13px;width: 5px;height: 10px;font-style: normal;overflow: hidden;position: relative;text-decoration:none;}
+.shopchat s{ font-family: "consolas";font-size: 13px;color: #b4b4b4;left: -7px;top: -1px; line-height: 15px;position: absolute; text-decoration: none;}
+.shopchat .count{position: absolute;left: 105px;top: -3px;padding: 0 4px; line-height: 14px; height: 14px;border-radius: 50% 50% 50% 0;background-color: #b61d1d;color: white;font-size: 12px;}
+
+.header_bot{height: 44px;line-height: 44px;font-size: 14px;}
+.commodity{height: 44px; width: 200px;padding-left: 10px; background-color: #b11911;color: white;}
+.header_bot ul{float: left;padding: 2px 0 0 20px;}
+.header_bot li {float: left; height: 42px;line-height: 42px;padding-right: 40px;}
+.header_bot li a{ color: #333333;}
+.header_bot li a:hover{ color: #b11911;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

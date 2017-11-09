@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>照片墙</title>
+	<script src="./jquery-1.11.3.min.js"></script>
+	<style type="text/css">
+	body{background-color: #000;}
+		.gallary{width: 1000px;height: 500px;position: relative;}
+		.center{margin: 200px auto;}
+		.item{position: absolute;width: 196px;height: 100px;transition: transform 1s;background-color: #fff;}
+		.itemInner{width: 100%;height: 100%;transition: transform 1s;}
+		
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var gallary = $(".gallary");
+			var html=[];
+			function init(){
+				for (var i = 0; i < 25; i++) {
+					var x=i%5;
+					var y=parseInt(i/5);
+					var item=$("<div class='item'><div class='itemInner'></div></div>");
+					var flag=true;
+
+					item.css({
+						"left" : x*196,
+						"top" : y*100
+					}).click(function(){
+						var index=$(this).index();
+						if (flag) {
+							showItem(index);
+						}else{
+							showAll();
+						};
+						flag = !flag;
+					});
+					html.push(item);	
+				}
+				gallary.append(html);
+			}
+			init();
+			showAll();
+			//console.log($(html));
+			function showAll(){
+				$(".item").each(function(t){
+					//console.log(t)
+					var r = t%5;
+					var l = parseInt( t/5 );
+					var deg = Math.random()*60-30;
+					$(this).css({
+						"transform":"translate("+(r-2)*50+"px,"+((l-2)*50)+"px) rotate("+deg+"deg)"
+						//"transform":"matrix(0.866,0.5,-0.5,0.866,0,0)"
+					});
+
+					$(this).children(".itemInner").css({
+						"background-image":"url(./img/"+t+".jpg)",
+						"background-size":"cover",
+						"transform":"scale(0.95,0.90)"
+					});
+				});
+				
+			}
+
+			//显示一张大图
+			function showItem(index){
+				$(".item").each(function(t){
+					//console.log(t)
+					var r=t%5;
+					var l=parseInt( t/5 );
+					$(this).css({
+						"transform":"translate(0) rotate(0)"
+					});
+					//console.log(t)
+					var r=t%5;
+					var l=parseInt( t/5 );
+					$(this).children(".itemInner").css({
+						"background-image":"url(./img/"+index+".jpg)",
+						"background-position":""+(-r*196)+"px "+(-l*100)+"px",
+						"background-size":"auto",
+						"transform":"scale(1,1)"
+					});
+				});
+				
+				
+				
+			}
+		});
+	</script>
+</head>
+<body>
+
+<div class="gallary center">
+	
+</div>
+
+</body>
+</html>

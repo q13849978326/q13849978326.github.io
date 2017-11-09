@@ -1,0 +1,15 @@
+/*初始化*/
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,li{margin: 0;padding: 0;}
+li{list-style: none;}
+a{text-decoration: none;}
+.inner{width: 1140px;margin: 0 auto;}
+body{font-size: 14px;font-family: arial,"Microsoft Yahei";}
+h3{padding: 55px 0;font-size: 1.5em;letter-spacing: 2px;}
+html { font-size: 12px; }
+
+
+
+
+
+
+

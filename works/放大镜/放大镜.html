@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>自身放大</title>
+<style>
+*{ margin:0; padding:0}
+#div1 {position:relative;width:500px; height:500px;cursor:move;overflow:visible;top:100px; left:100px; border: 1px solid #000;}
+#div1 img{ width:100%; height:100%;opacity: 0.5;}
+#div1 .div2 {width:200px; height:200px; position:absolute;left:0px; top:0px; display:none;border: 1px solid #ccc;border-radius: 50%; overflow: hidden;}
+/* .div2 {width:300px; height:300px;overflow:hidden; position:absolute; top:100px;  display:none;border: 1px solid black} */
+#div1 .bigImg {position:absolute;opacity: 1;}
+</style>
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+
+function magnify($obj){
+	//创建元素
+	var html=$('<div class="div2"><img class="bigImg" src="'+$("#div1 img").eq(0).prop("src")+'" /></div>')
+	$obj.append(html);
+
+	$obj.mouseenter(function(ev){
+
+			$(".div2").show();
+			
+			$(this).mousemove(function(ev){
+				//获取鼠标的坐标
+				// ev.pageX;
+				// ev.pageY;
+
+				//div1的坐标
+				var offset=$(this).offset();
+				//盒子尺寸
+				var _div2W=$(".div2").width();
+				var _div2H=$(".div2").height();
+				var div1W=$obj.width();
+				var div1H=$obj.height();
+
+				var div2W=$(".div2").width();
+				var div2H=$(".div2").height();
+
+				//计算缩放比例
+				var scaleL=0.5;
+				var scaleH=0.5;
+				//计算大图的尺寸
+				$(".div2 img").css({"width":div1W/scaleL, "height":div1H/scaleH});
+
+				//阴影距离盒子的位置
+				l=ev.pageX-offset.left-_div2W/2;	//鼠标-div1的左位移-.div2宽度的一半
+				h=ev.pageY-offset.top-_div2H/2;
+				// 可以移动的最大距离
+				maxL=div1W-_div2W;	//.div2父的宽-.div2的宽
+				maxH=div1H-_div2H;
+				
+				if (l<-_div2W/2) {
+					l=-_div2W/2;
+				}else if (l>maxL+_div2W/2) {
+					l=maxL+_div2W/2;
+				}
+				if (h<-_div2W/2) {
+					h=-_div2W/2;
+				}else if (h>maxH+_div2W/2) {
+					h=maxH+_div2W/2;
+				}
+				console.log(h,maxH)
+				// 移动.div2
+				$(".div2").css({"left":l,"top":h});
+	
+				//计算div2的图片移动
+				l=l/scaleL+_div2W/2;
+				h=h/scaleH+_div2W/2;
+				$(".div2 img").css({"left":-l, "top": -h});
+
+			})
+		}).mouseleave(function(){
+			
+			$(".div2").hide();
+		});
+}
+magnify($("#div1"))
+
+});
+
+
+
+</script>
+</head>
+
+<body>
+<div id="div1">
+    <img  src="images/1.jpg" />
+    <!-- <span></span> -->
+</div>
+<!-- <div id="div2">
+    <img id="bigImg" src="images/1.jpg" />
+</div> -->
+
+
+
+</body>
+</html>

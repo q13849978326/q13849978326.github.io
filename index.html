@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Bootstrap 101 Template</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <style type="text/css">
+    body{ position: relative; overflow-x:hidden;  }
+    .container { padding: 0; }
+    .topper{ background-color: #1f272d; font-size: 14px; color: #666; line-height: 50px;}
+    .topper h1{ font-size: 20px; color: #ccc; margin: 0;padding: 0; line-height: 50px;  }
+    .topper h1 span{ font-size: 14px; }
+    .topper .column{ height: 50px; }
+    .topper .column span{ padding-right: 20px; }
+    .topper .icon-link{ width: 25px;height: 25px;display: inline-block; background: url(./images/icon.png) no-repeat 0px -50px; margin:10px 5px 0 0; position: relative;  }
+    .topper .icon-link:nth-child(2){ background-position: -90px -50px; }
+    .topper .icon-link:nth-child(1):hover{background-position: 0 -74.5px;}
+    .topper .icon-link img{ display: none; width: 50vw; max-width: 200px; padding: 5px; background-color: #fff; }
+    .topper .icon-link:hover img{ display: block; position: absolute; top: 35px; right: 0; z-index: 10;  }
+    .topper .icon-link:nth-child(2):hover{ background-position: -90px -74.5px; }
+    .purchase { color: #444; position: relative; }
+    .purchase .bg-font{ font-size: 50px; padding-top: 20px;}
+    .purchase .sm-font{ font-size: 26px; padding-top: 20px;}
+    .purchase p{ font-size: 20px; color: #666; padding-top: 20px; font-weight: 200; }
+    .purchase .module{ width: 100%; height: 100%; opacity: 1; position: absolute;top:0; left: 0; background-color: #eee;   }
+    .purchase .jumbotron{ background: transparent; position: relative;}
+    .works .nav li{background-color: #fff; border: 1px solid #ccc; border-radius: 5px; }
+    .works .thumbnail{ text-align: center; overflow: hidden;}
+    .works .thumbnail img{ width: 100%; margin-bottom: 10px;transition: transform .5s; }
+    .works .thumbnail:hover img{transform: scale(1.1);overflow: hidden; }
+    .works .thumbnail span{ padding-top: 10px; }
+    .works .category{ padding-bottom: 20px ; clear: both; width: 100%; }
+    .works .affix{ width: 150px; top: 20px;}
+    .footer { background-color: #283036; color: #ccc; font-size: 12px; text-align: center; padding: 20px 0px 10px 0; }
+  </style>
+</head>
+
+<body data-spy="scroll" data-target="#navbar" >
+  <!-- 顶部 -->
+  <div class="topper ">
+      <div class="container">
+          <div class="row topper-row">
+             <div class="column col-xs-6 col-sm-9">
+                <h1>智海伟 <span class="glyphicon glyphicon-fire"></span></h1>
+             </div>
+             <div class="right column col-sm-6 text-right col-sm-3">
+              <a class="icon-link" href="##">
+                <img src="images/mine_wx.png" alt="微信">
+              </a>
+              <a class="icon-link" href="##">
+                <img src="images/mine_qq.jpg" alt="微信">
+              </a>
+             </div>
+          </div>
+      </div>
+  </div>
+  <!-- purchase -->
+  <div class="purchase text-center">
+      <div class="module"></div>
+      <div class="jumbotron">
+          <h1 class="hidden-xs bg-font">Welcome to my website！</h1>
+          <h1 class="visible-xs sm-font">Welcome to my website！</h1>
+          <p>这里是展示我的作品的地方!</p>
+      </div>
+  </div>
+  <div class="container works">
+      <div class="row">
+          <div class=" hidden-xs col-sm-4 col-md-2" id="navbar">
+              <ul class=" nav nav-pills nav-stacked affixNav affix-top" >
+                <li><a href="#pc">PC端项目</a></li>
+                <li><a href="#mobile">移动端项目</a></li>
+              </ul>
+          </div>
+          <div class="col-sm-8 col-md-10">
+              <h2 class="category" id="pc">PC端项目</h2>
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-4 ">
+                  <a href="works/贪吃蛇/貪吃蛇.html" class="thumbnail" target="_black">
+                    <img src="./images/work_snake.jpg" alt="works">
+                    <span>原生JS实现贪吃蛇小游戏</span>
+                  </a>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4 ">
+                  <a href="works/京东/index.html" class="thumbnail" target="_black">
+                    <img src="./images/jd_home_02.jpg" alt="works">
+                    <span>京东主页</span>
+                  </a>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4 ">
+                  <a href="works/京东/product_details.html" class="thumbnail" target="_black">
+                    <img src="./images/jd_details_01.jpg" alt="works">
+                    <span>京东商品购买页面</span>
+                  </a>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4 ">
+                  <a href="works/日历/日历.html" class="thumbnail" target="_black">
+                    <img src="./images/calendar.jpg" alt="works">
+                    <span>日历</span>
+                  </a>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                  <a href="works/照片墙/index.html" class="thumbnail" target="_black">
+                    <img src="./images/Photo_wall_02.jpg" alt="works">
+                    <span>照片墙</span>
+                  </a>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                  <a href="works/3D车轮旋转效果切换图片/3D相册（比较难）.html" class="thumbnail" target="_black">
+                    <img src="./images/wheel_photo_02.jpg" alt="works">
+                    <span>3D车轮切换图片</span>
+                  </a>
+                </div>
+                 <div class="col-xs-6 col-sm-6 col-md-4">
+                  <a href="works/OA办公系统/index.html" class="thumbnail" target="_black">
+                    <img src="./images/Title.png" alt="works">
+                    <span>OA办公系统-bootstrap</span>
+                  </a>
+                </div>
+                 <div class="col-xs-6 col-sm-6 col-md-4">
+                  <a href="works/放大镜/放大镜.html" class="thumbnail" target="_black">
+                    <img src="./images/fdj.png" alt="works">
+                    <span>自制放大镜</span>
+                  </a>
+                </div>
+                 <div class="col-xs-6 col-sm-6 col-md-4">
+                  <a href="works/canvas/canvas钟表.html" class="thumbnail" target="_black">
+                    <img src="./images/jqr.png" alt="works">
+                    <span>钟表--canvas</span>
+                  </a>
+                </div>
+              </div>
+              <h2 class="category" id="mobile">移动端项目</h2>
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-4">
+                    <a href="./works/vue-dist/index.html" class="thumbnail" target="_black">
+                      <img src="./images/db.png" alt="works">
+                      <span>Vue仿豆瓣app</span>
+                    </a>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-4">
+                    <a href="./works/网易云音乐/index.html" class="thumbnail" target="_black">
+                      <img src="./images/wyy.png" alt="works">
+                      <span>网易云音乐--ajax</span>
+                    </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <!-- footer -->
+  <div class="footer">
+    <p>Copyright © 2017.Chen All rights reserved</p>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery-3.1.0.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      var $body = $('body');
+      $body.scrollspy({ target: '#navbar'});
+      $body.on('activate.bs.scrollspy', function (ev) {
+        $('#navbar .nav').addClass("affix");
+        //console.log(ev.currentTarget.scrollTop)
+
+      });
+      $(window).on('scroll', function (ev) {
+        //console.log( $(window).scrollTop(), $('#pc').offset().top );
+        if ( $(window).scrollTop() - $('#pc').offset().top < -10) {
+          $('#navbar .nav').removeClass("affix");
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>
+
+
+

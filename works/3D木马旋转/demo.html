@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3D旋转</title>
+	<style type="text/css">
+	.wrap{ perspective: 300px;margin: 300px auto;width: 160px;height: 100px;}
+	.container{transform-style: preserve-3d;}
+	img{width: 160px;height: 100px;position:absolute;transition: transform 1s;}
+	.piclist img:nth-child(1) { transform: rotateY(   0deg ) translateZ(300px)}
+	.piclist img:nth-child(2) { transform: rotateY(  40deg ) translateZ(300px)}
+	.piclist img:nth-child(3) { transform: rotateY(  80deg ) translateZ(300px)}
+	.piclist img:nth-child(4) { transform: rotateY( 120deg ) translateZ(300px)}
+	.piclist img:nth-child(5) { transform: rotateY( 160deg ) translateZ(300px)}
+	.piclist img:nth-child(6) { transform: rotateY( 200deg ) translateZ(300px)}
+	.piclist img:nth-child(7) { transform: rotateY( 240deg ) translateZ(300px)}
+	.piclist img:nth-child(8) { transform: rotateY( 280deg ) translateZ(300px)}
+	.piclist img:nth-child(9) { transform: rotateY( 320deg ) translateZ(300px)}
+	.staticPic:nth-child(2) {transform: translateZ(100px)}
+	.staticPic:nth-child(3) {transform:translateZ(100px) rotateX(89deg) scale(1.5);top:70px;left: 0px;}
+	</style>
+	<script src="jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var n=1;
+			$('.wrap').click(function(){
+				$('.piclist img').each(function(i){
+					n%=9
+					$(this).css({
+						"transform":" rotateY("+(i+n)*40+"deg ) translateZ(300px)"
+					});
+					$("#staticPic").attr("src","img/"+(2+n)%9+".jpg")
+				});
+				n++;
+			})
+		})
+	</script>
+</head>
+<body>
+<div class="wrap">
+	<div class="container">
+		<div class="piclist">
+			<img src="img/0.jpg">
+			<img src="img/1.jpg">
+			<img src="img/2.jpg">
+			<img src="img/3.jpg">
+			<img src="img/4.jpg">
+			<img src="img/5.jpg">
+			<img src="img/6.jpg">
+			<img src="img/7.jpg">
+			<img src="img/8.jpg">
+		</div>
+		<img class="staticPic" id="staticPic" src="img/8.jpg">
+		<img class="staticPic" src="img/8.jpg">
+	</div>
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/mystyle.css" type="text/css">
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">OA系统</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;后台首页<span
+                        class="sr-only">(current)</span></a></li>
+                <li><a href="user.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;用户管理</a></li>
+                <li class="active"><a href="content.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;内容管理</a></li>
+                <li><a href="label.html"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;标签管理</a></li>
+                <li><a href="email.html"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;我的邮箱<span class="badge">10</span></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <div class="mar_10"><img src="images/touxiang.jpg" alt="" class="img-circle img-responsive"></div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">管理员 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;前台首页</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人主页</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;账户中心</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;我的收藏</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <div class="col-md-2">
+        <div class="list-group">
+            <a href="user.html" class="list-group-item active">
+                内容管理
+            </a>
+            <a href="user_search.html" class="list-group-item">添加内容</a>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="page-header hear_title">
+            <h4>内容管理</h4>
+        </div>
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="content.html">内容管理</a></li>
+            <li role="presentation"><a href="add_content.html">添加内容</a></li>
+        </ul>
+        <table class="table mar_t10">
+            <thead>
+            <tr>
+                <th>文章标题</th>
+                <th>作者</th>
+                <th>发布时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>盘点今年十大经典电影</th>
+                <td>小李飞刀</td>
+                <td>2017/08/08</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            操作
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">编辑</a></li>
+                            <li><a href="#">删除</a></li>
+                            <li><a href="#">全局置顶</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>盘点今年十大经典电影</th>
+                <td>小李飞刀</td>
+                <td>2017/08/08</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            操作
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">编辑</a></li>
+                            <li><a href="#">删除</a></li>
+                            <li><a href="#">全局置顶</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>盘点今年十大经典电影</th>
+                <td>小李飞刀</td>
+                <td>2017/08/08</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            操作
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">编辑</a></li>
+                            <li><a href="#">删除</a></li>
+                            <li><a href="#">全局置顶</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>盘点今年十大经典电影</th>
+                <td>小李飞刀</td>
+                <td>2017/08/08</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            操作
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">编辑</a></li>
+                            <li><a href="#">删除</a></li>
+                            <li><a href="#">全局置顶</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>盘点今年十大经典电影</th>
+                <td>小李飞刀</td>
+                <td>2017/08/08</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            操作
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">编辑</a></li>
+                            <li><a href="#">删除</a></li>
+                            <li><a href="#">全局置顶</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>盘点今年十大经典电影</th>
+                <td>小李飞刀</td>
+                <td>2017/08/08</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            操作
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">编辑</a></li>
+                            <li><a href="#">删除</a></li>
+                            <li><a href="#">全局置顶</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>盘点今年十大经典电影</th>
+                <td>小李飞刀</td>
+                <td>2017/08/08</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            操作
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">编辑</a></li>
+                            <li><a href="#">删除</a></li>
+                            <li><a href="#">全局置顶</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation">
+            <ul class="pagination pull-right">
+                <li class="disabled">
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<footer>
+    <div class="container text-center" style="padding: 30px 0">
+        联系方式: 121323213
+    </div>
+</footer>
+
+</body>
+</html>

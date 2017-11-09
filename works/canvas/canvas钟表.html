@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas钟表圆盘</title>
+</head>
+
+<script>
+    window.onload = function () {
+        var cvs = document.getElementById('cvs');
+        var ctx = cvs.getContext('2d');
+        var x1,y1,x,y,len;
+        var r=200;
+        function draw(n) {
+            var deg = (2 * Math.PI /60)*n;
+            if(n%5===0){
+                ctx.lineWidth='5';
+                ctx.strokeStyle = randomColor();
+                len=15;
+            }else{
+                ctx.lineWidth='2';
+                ctx.strokeStyle = randomColor();
+                len=10;
+            }
+            x1=300+Math.cos(deg)*(r-len);
+            y1=300+Math.sin(deg)*(r-len);
+            var x=300+Math.cos(deg)*r;
+            var y=300+Math.sin(deg)*r;
+            ctx.beginPath();
+            ctx.moveTo(x1,y1);
+            ctx.lineTo(x, y);
+            ctx.closePath();
+            ctx.stroke();
+
+        }
+        for (var i = 0; i < 60; i++) {
+            draw(i);
+        }
+        function run() {
+            ctx.clearRect(0,0,1000,1000);
+            for (var i = 0; i < 60; i++) {
+                draw(i);
+            }
+            var date=new Date();
+            var s=date.getSeconds();
+            var m=date.getMinutes();
+            var h=date.getHours();
+            h=h%12;
+            var sdeg=(2 * Math.PI /60)*s-Math.PI*2/4;
+            var mdeg=(2 * Math.PI /60)*(m+s/60)-Math.PI*2/4;
+            var hdeg=(2 * Math.PI /12)*(h+m/60+s/3600)-Math.PI*2/4;
+            var mdeg1=(2 * Math.PI /60)*(m+s/60)-Math.PI*3/2;
+            line(hdeg,90,5);
+            line(mdeg,65,3);
+            line(sdeg,25,1);
+            function line(deg,len,size) {
+                var x=300+Math.cos(deg)*(r-len);
+                var y=300+Math.sin(deg)*(r-len);
+                ctx.beginPath();
+                ctx.lineJoin="round";
+                ctx.strokeStyle = randomColor();
+                ctx.lineWidth=size;
+                ctx.moveTo(300,300);
+                ctx.lineTo(x, y);
+                ctx.closePath();
+                ctx.stroke();
+
+
+
+                //中心圆点
+                ctx.beginPath();
+                ctx.arc(300, 300, 3, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.closePath();
+
+            }
+
+        }
+        function randomColor() {
+            var r = Math.floor(Math.random() * 255);
+            var j = Math.floor(Math.random() * 255);
+            var b = Math.floor(Math.random() * 255);
+            return 'rgb(' + r + ',' + j + ',' + b + ')';
+        }
+        run();
+        setInterval(run,1000);
+
+    }
+</script>
+<body>
+<canvas id="cvs" width="1000" height="1000"></canvas>
+</body>
+</html>

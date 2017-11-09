@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3D车轮旋转</title>
+	<style type="text/css">
+
+	.wrap{margin:100px auto;position: relative;width: 800px;}
+	.container{width: 800px;height: 400px; margin-bottom: 100px;transform-style: preserve-3d; perspective:1800px;transform: rotateY(0deg);perspective-origin: center center;position: relative;}
+
+	.pic{height: 400px; width: 200px;overflow: hidden;background-color: #ccc;position: absolute;transition: transform 0.5s}
+	img{width:800px;height: 400px; position:absolute;top: 0;left: 0;border-radius: 8px; }
+	button{width: 40px;height: 100px;padding:0 10px 0 0px; position: absolute;top: 40%;left: -146px;background-color: rgba(0,0,0,0.2);font:38px/90px Arial;font-weight: bold;color: #fff;text-align: right;border: none;cursor: pointer;}
+	.next{left: 916px;}
+	</style>
+	<script src="./jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+		//核心是结构的搭建
+		//3D旋转的核心为div.container,（此处需要注意，3D旋转会找定位父级，旋转元素的定位父级必须是container，不然无法实现）
+		//横向由四个20%的div.piclist组成
+		//用div.pic包裹起来img，使img可以定位
+		$(function(){
+			var n=0;
+			var flag=true;//动画结束前，点击无效
+			var arr=[];
+			var timer;
+			var n=0;
+			//初始化
+			function init(){
+				for (var i = 0; i < 4; i++) {
+					$('.piclist').eq(i).find(".pic").each(function(j){
+
+						$(this).css({
+							transform:"rotateX("+(j)*90+"deg) translateZ(200px)"
+						})
+					});
+				}
+				$('.piclist').each(function(i){
+					
+					$(this).find('.pic').css({
+						left:i*200
+					});
+					$(this).find("img").css({
+						left:i*(-200)
+
+					})
+				})
+			}
+			init()
+			function move(){
+				for (var i = 0; i < 4; i++) {
+					(function(){
+						var m=i;	
+						setTimeout(function(){
+
+							$('.piclist').eq(m).find(".pic").each(function(j){
+
+								$(this).css({
+									
+									transform:"rotateX("+(j+n)*90+"deg) translateZ(200px)"
+								})
+							});
+							if (m==3) {flag=true;}
+							
+						},m*200);
+					})();
+				}	
+			}
+
+			$('.next').click(function(){
+				if (!flag) {return false;}
+				n++;
+				flag=false;
+				move();
+				
+			});
+
+			$('.prev').click(function () {
+				
+				if (!flag) {return false;}
+				flag=false;
+				n--;
+				move();
+				
+			});
+
+
+		});
+	</script>
+</head>
+<body>
+<div class="wrap">
+	<div class="container">
+		<div class="piclist">
+			<div class="pic">
+				<img src="img/0.jpg">
+			</div>
+			<div class="pic">
+				<img src="img/1.jpg">
+			</div>
+			<div class="pic">
+				<img src="img/2.jpg">
+			</div>
+			<div class="pic">
+				<img src="img/3.jpg">
+			</div>
+		</div>
+		<div class="piclist">
+			<div class="pic">
+				<img src="img/0.jpg">
+			</div>
+			<div class="pic">
+				<img src="img/1.jpg">
+			</div>
+			<div class="pic">
+				<img src="img/2.jpg">
+			</div>
+			<div class="pic">
+				<img src="img/3.jpg">
+			</div>
+		</div>
+		<div class="piclist">
+			<div class="pic">
+				<img src="img/0.jpg">
+			</div>
+			<div class="pic">
+				<img src="img/1.jpg">
+			</div>
+			<div class="pic">
+				<img src="img/2.jpg">
+			</div>
+			<div class="pic">
+				<img src="img/3.jpg">
+			</div>
+		</div>
+		<div class="piclist">
+			<div class="pic">
+				<img src="img/0.jpg">
+			</div>
+			<div class="pic">
+				<img src="img/1.jpg">
+			</div>
+			<div class="pic">
+				<img src="img/2.jpg">
+			</div>
+			<div class="pic">
+				<img src="img/3.jpg">
+			</div>
+		</div>
+		<button class="prev" type="button">＜</button>
+		<button class="next" type="button">＞</button>	
+	</div>
+
+</div>
+
+</body>
+</html>

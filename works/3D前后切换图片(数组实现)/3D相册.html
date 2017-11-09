@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3D旋转</title>
+	<style type="text/css">
+	.wrap{margin:100px auto;position: relative;width: 860px;}
+	.containter{margin-bottom: 100px;}
+	.piclist{perspective-origin: 50% bottom;transform-style: preserve-3d; perspective:1800px;width: 860px;height: 400px;transform: rotateX(-30deg);}
+	img{width:860px; position:absolute;transform-origin:center bottom;transition: transform 1s;border-radius: 8px; opacity:1}
+	button{width: 100px;height: 40px;background-color: #CCc;position: absolute;bottom: -48px;left: 0;}
+	.next{left: 760px;}
+	</style>
+	<script src="./jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var n=0;
+			var flag=true;//动画结束前，点击无效
+			var arr=[];
+			var timer;
+			$('.piclist img').each(function () {
+				arr.push($(this));
+			});
+
+			$('.next').click(function(){
+				if (!flag) {return false;}
+				flag=false;
+
+				moveForward();
+			});
+
+			$('.prev').click(function () {
+				if (!flag) {return false;}
+				flag=false;
+
+				moveBack();
+			});
+
+			timer=setInterval(moveForward,3000);
+
+			$(".container").hover(function () {
+
+				clearInterval(timer);
+			},function () {
+				timer=setInterval(moveForward,3000);
+			});
+			
+			function moveForward(){
+				//旋转
+				arr[0].css({
+					"transition": "transform 1s, opacity 1s",
+					"transform": "translateZ(0px) rotateX(-270deg)",
+					"opacity":0
+				});
+				arr[arr.length]=arr[0];
+				arr.shift();
+				//旋转动画结束后再改变样式
+				setTimeout(function(){
+					
+					arr[arr.length-1].css({
+						"transition": "transform 0s",
+						"transform": "translateZ("+-(arr.length)*50+"px) rotateX(0deg)",
+						"opacity":1
+					});
+					//移动所有图片
+					setTimeout(init,50);
+					
+				},1000);
+			}
+
+			function moveBack(){
+				//旋转
+				arr[arr.length-1].css({
+					"transition": "transform 1s, opacity 2s",
+					"transform-origin":"center 480px",
+					"transform": "translateZ(50px) rotateX(360deg)",
+					"opacity":1
+				});
+				arr.unshift(arr[arr.length-1]);
+				arr.pop();
+				//旋转动画结束后再改变样式
+				setTimeout(function(){
+					
+					arr[0].css({
+						"transition": "transform 0s",
+						"transform-origin":"center bottom",
+						"transform": "translateZ("+50+"px) rotateX(0deg)",
+						"opacity":1
+					});
+					//移动所有图片
+					setTimeout(init,50);
+					
+				
+				},1000);
+			}
+
+			function init(){
+				for (var i = 0; i < arr.length; i++) {
+					arr[i].css({
+						"transition": "transform 1s",
+						"transform": "translateZ("+-i*50+"px) rotateX(0deg)"
+					});
+				}
+				flag=true;
+			}
+			init();
+		});
+	</script>
+</head>
+<body>
+<div class="wrap">
+	<div class="container">
+		<div class="piclist">
+			<img src="img/0.jpg">
+			<img src="img/1.jpg">
+			<img src="img/2.jpg">
+			<img src="img/3.jpg">
+			<img src="img/4.jpg">
+		</div>
+		<button class="prev" type="button">prev</button>
+		<button class="next" type="button">next</button>	
+	</div>
+
+</div>
+
+</body>
+</html>

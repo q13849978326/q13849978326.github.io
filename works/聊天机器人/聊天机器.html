@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="MyTools.js"></script>
+    <style>
+        .wrap {
+            width: 500px;
+            height: 800px;
+            margin: 100px auto 0;
+        }
+
+        .content_box {
+            width: 100%;
+            height: 400px;
+            background: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 480px;
+        }
+
+        .scroll {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 20px;
+            height: 50px;
+            background: #343434;
+            cursor: default;
+        }
+
+        form {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            resize: none;
+        }
+
+        input[type="checkbox"] {
+
+        }
+
+        input[type="submit"] {
+            width: 100px;
+            height: 35px;
+            background: #aaa;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .txtBox {
+            height: 50px;
+            padding: 10px;
+        }
+
+        .txtL {
+            float: left;
+            line-height: 30px;
+            color: #000;
+            background: #ccc;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .txtR {
+            float: right;
+            line-height: 30px;
+            color: #000;
+            background: #ccc;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        label{
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="content_box">
+        <div class="content"></div>
+        <div class="scroll"></div>
+    </div>
+    <form action="">
+        <textarea></textarea>
+        <label><input class="enterBox" type="checkbox">Enter发言,shift+Enter换行</label> <input class="submit" type="submit" value="发言">
+    </form>
+</div>
+
+<script>
+    let conBox = document.querySelector('.content_box');//内容和滚动条的父元素
+    let con = document.querySelector('.content');//内容区域
+    let scroll = document.querySelector('.scroll');//滚动条
+    let enterBox = document.querySelector('.enterBox');//是否enter发送 选框
+    let textArea = document.querySelector('textArea');//文本域
+    let submit = document.querySelector('.submit');//发言按钮
+    MyTools.createScroll(conBox, con, scroll);  // 传入参数 制作滚动条
+
+    setTimeout(function () {               //  客服MM 默认发言
+        let txtP = document.createElement('p'); //新建p元素
+        txtP.className = 'txtBox';   //赋予样式
+        con.appendChild(txtP);  //添加到内容区域
+
+        let txtS = document.createElement('p');//新建p元素
+        txtP.appendChild(txtS);//添加到内容区域
+        txtS.className = 'txtL';//赋予样式
+        txtS.innerText = '帅哥，你好';//赋予文本
+
+        let txtP2 = document.createElement('p'); //新建p元素
+        txtP2.className = 'txtBox';   //赋予样式
+        con.appendChild(txtP2);  //添加到内容区域
+
+        let txtS2 = document.createElement('p');//新建p元素
+        txtP2.appendChild(txtS2);//添加到内容区域
+        txtS2.className = 'txtL';//赋予样式
+        txtS2.innerText = '有什么可以帮助您的吗？';//赋予文本
+    }, 500);
+
+    submit.onclick = function () {  //点击发言按钮 触发事件
+        sub();
+        textArea.value = '';  //清空文本域的文本
+        return false;     //清空默认事件
+    };
+
+    textArea.onkeydown = function (e) {
+        if (enterBox.checked) {  //如果勾选enter发送
+            if (e.keyCode == 13 && e.shiftKey) {  // 换行功能为 shift+enter
+                textArea.value += '\n';
+            } else if (e.keyCode == 13) {   //改为回车发送
+                sub();
+                textArea.value = '';//清空文本域的文本
+                return false;  //清空默认事件
+            }
+        }
+    };
+    function scrollInit() {  //重置滚动条位置
+        if (con.offsetHeight < conBox.offsetHeight) { //如果内容区域没有超过大盒子范围
+            scroll.style.display = 'none';          //隐藏滚动条
+        } else {
+            scroll.style.display = 'block';         //内容区域超过范围   出现滚动条
+            scroll.style.height = conBox.offsetHeight / con.offsetHeight * conBox.offsetHeight + 'px';//根据内容 重置滚动条高度
+            scroll.style.top = conBox.offsetHeight - scroll.offsetHeight + 'px';//根据内容 重置滚动条位置在最底部
+            con.style.top = -(con.offsetHeight - conBox.offsetHeight) + 'px';//使内容区域始终显示到最底部
+        }
+    }
+    function sub() {
+        let text = textArea.value;   //获取文本域输入的文本
+
+        let txtP = document.createElement('p');  //同上
+        txtP.className = 'txtBox'; //同上
+        con.appendChild(txtP); //同上
+
+        let txtS = document.createElement('p'); //同上
+        txtP.appendChild(txtS); //同上
+        txtS.className = 'txtR'; //同上
+        txtS.innerText = text;   //将文本域的文本赋予给p标签
+
+        scrollInit();
+
+        if (text.indexOf('你多大') > -1) {   //如果文本域输入的文本包含‘你多大’
+            setTimeout(function(){createTxt('哥哥我才18岁呢')}, 1000);
+        } else if (text.indexOf('名字') > -1) {
+            setTimeout(function(){createTxt('我叫客服MM')}, 1000);
+        } else if (text.indexOf('身材') > -1) {
+            setTimeout(function(){createTxt('我的身材非常非常的棒')}, 1000);
+        } else if (text.indexOf('红包') > -1) {
+            setTimeout(function(){createTxt('哥哥，MM真的很穷呢')}, 1000);
+        } else {
+            setTimeout(function(){createTxt('哥哥你说的话，MM听不懂呢')}, 1000);
+        }
+    }
+
+    function createTxt(txt) {         //延迟1秒   客服MM 回复
+        let txtP = document.createElement('p');   //同上
+        txtP.className = 'txtBox'; //同上
+        con.appendChild(txtP); //同上
+
+        let txtS = document.createElement('p'); //同上
+        txtP.appendChild(txtS); //同上
+        txtS.className = 'txtL'; //同上
+        txtS.innerText = txt; //同上ss
+        scrollInit(); //同上
+    }
+</script>
+</body>
+</html>

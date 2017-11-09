@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/mystyle.css" type="text/css">
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">OA系统</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;后台首页<span
+                        class="sr-only">(current)</span></a></li>
+                <li><a href="user.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;用户管理</a></li>
+                <li><a href="content.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;内容管理</a></li>
+                <li  class="active"><a href="label.html"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;标签管理</a></li>
+                <li><a href="email.html"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;我的邮箱<span class="badge">10</span></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <div class="mar_10"><img src="images/touxiang.jpg" alt="" class="img-circle img-responsive"></div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">管理员 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;前台首页</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人主页</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;账户中心</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;我的收藏</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <div class="page-header hear_title">
+        <h4>TAG标签管理</h4>
+    </div>
+        <div class="row">
+            <div class="form-group col-sm-9">
+                <input type="text" class="form-control" id="labelText" placeholder="请输入要添加的标签">
+            </div>
+            <div class="col-sm-2"><button type="submit" class="btn btn-default add_label">添加</button></div>
+        </div>
+    <div class="container all_label">
+        <div class="alert alert-info alert-dismissible pull-left label_box" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <span>Bootstrap</span>
+        </div>
+        <div class="alert alert-info alert-dismissible pull-left label_box" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <span>JavaScript</span>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container text-center" style="padding: 30px 0">
+        联系方式: 121323213
+    </div>
+</footer>
+</body>
+</html>
+<script>
+    var oAddText=$("#labelText");
+    var oAddBtn=$(".add_label");
+    oAddBtn.attr({"disabled":true});
+    oAddText.focus(function(){
+        oAddBtn.attr({"disabled":false});
+        return false;
+    });
+    oAddBtn.click(function(){
+        var text=oAddText.val();
+        if(text===""){
+            oAddBtn.attr({"disabled":true});
+            alert("你输入的内容为空！");
+            return
+        }
+        var oLabel=$('<div class="alert alert-info alert-dismissible pull-left label_box" role="alert">'
+                + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'
+                +'<span>'+text+'</span>'+
+                + '</div>');
+        oLabel.appendTo($(".all_label"));
+        oAddText.val("");
+        oAddBtn.attr({"disabled":true});
+    });
+
+</script>
